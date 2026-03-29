@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leaderboard</title>
-    <link rel="stylesheet" href="./leaderboards.css">
-  </head>
-  <body>
-    <button id="backButton" class="back-button">← Back</button>
-    <br />
-    <h2>Leaderboard</h2>
-    <ul id="leaderboardList">
-     
-    </ul>
-    <div class="friend-section">
-      <input
-        id="friendInput"
-        class="friend-input"
-        type="text"
-        placeholder="Enter friend's LeetCode username"
-        autocomplete="off"
-      />
-      <div id="removeFriendStatus" class="addFriend" style="margin-top: 10px; margin-bottom: 10px;"></div>
-      <div id="addFriendStatus" class="addFriend" style="margin-top: 10px; margin-bottom: 10px;"></div>
-      <button id="addFriendBtn" class="friend-button">➕ Add Friend</button>
-      
-    </div>
 
-    <script type="module" src="../../dist/name3.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="./leaderboards.css">
+</head>
+
+<body>
+  <button id="backButton" class="back-button">← Back</button>
+  <br />
+  <h2>Leaderboard</h2>
+  <label for="toggleView" style="display:flex; align-items:center; gap:5px; cursor:pointer;">
+    <input type="checkbox" id="toggleView" />
+    <span>Show Streaks</span>
+  </label>
+  <ul id="leaderboardList">
+
+  </ul>
+  <div class="friend-section">
+    <input id="friendInput" class="friend-input" type="text" placeholder="Enter friend's LeetCode username"
+      autocomplete="off" />
+    <div id="removeFriendStatus" class="addFriend" style="margin-top: 10px; margin-bottom: 10px;"></div>
+    <div id="addFriendStatus" class="addFriend" style="margin-top: 10px; margin-bottom: 10px;"></div>
+    <button id="addFriendBtn" class="friend-button">➕ Add Friend</button>
+
+  </div>
+
+  <script type="module" src="../../dist/leaderboard.js"></script>
+</body>
+
 </html>

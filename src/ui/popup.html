@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LeetCode Hint</title>
-    <link rel="stylesheet" href="./popup.css">
-  </head>
-  <body>
-    <div id="leetcodeUsernameSection">
-      <h2>Enter your LeetCode Username</h2>
-      <input
-        type="text"
-        id="leetcodeUsernameInput"
-        placeholder="I Love LeetCode :)"
-        autocomplete="off"
-        style="
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeetCode Hint</title>
+  <link rel="stylesheet" href="./popup.css">
+</head>
+
+<body>
+  <div id="leetcodeUsernameSection">
+    <h2>Enter your LeetCode Username</h2>
+    <input type="text" id="leetcodeUsernameInput" placeholder="I Love LeetCode :)" autocomplete="off" style="
           width: 90%;
           padding: 10px 14px;
           background-color: #2e2e3f;
@@ -26,15 +23,12 @@
           margin-top: 6px;
           margin-bottom: 10px;
           transition: border 0.3s ease, box-shadow 0.3s ease;
-        "
-      />
-      <button id="saveLeetCodeUsernameBtn">Save Username</button>
-    </div>
+        " />
+    <button id="saveLeetCodeUsernameBtn">Save Username</button>
+  </div>
 
-    <div id="profileContainer" style="margin-top: 10px; display: none">
-      <button
-        id="logoutBtn"
-        style="
+  <div id="profileContainer" style="margin-top: 10px; display: none">
+    <button id="logoutBtn" style="
           background: none;
           border: none;
           color: #ff4d4d;
@@ -44,42 +38,38 @@
           margin-top: 4px;
           cursor: pointer;
           text-align: left;
-        "
-      >
-        ← Logout
-      </button>
-      <button id="profileButton">👤 View Profile</button>
+        ">
+      ← Logout
+    </button>
+    <button id="profileButton">👤 View Profile</button>
 
-      <div id="profileDetails" class="info" style="margin-top: 10px"></div>
-    </div>
+    <div id="profileDetails" class="info" style="margin-top: 10px"></div>
+  </div>
 
-    <button id="leaderboardBtn" style="display: none">🏆 Leaderboard</button>
+  <button id="leaderboardBtn" style="display: none">🏆 Leaderboard</button>
 
-    <div id="hintSection">
-      <h2>LeetCode Hint</h2>
-      <button id="hintButton">💡 Get Hint</button>
-      <div id="hintContainer" class="hint-container"></div>
-    </div>
+  <div id="hintSection">
+    <h2>LeetCode Hint</h2>
+    <button id="hintButton">💡 Get Hint</button>
+    <div id="hintContainer" class="hint-container"></div>
+  </div>
 
-    <div id="codeSection">
-      <h2>Your Logical Error</h2>
-      <button id="errorButton">🤔 Get Error</button>
-      <div id="errorContainer" class="error-container" ><br /></div>
-    </div>
+  <div id="codeSection">
+    <h2>Your Logical Error</h2>
+    <button id="errorButton">🤔 Get Error</button>
+    <div id="errorContainer" class="error-container"><br /></div>
+  </div>
 
-    <div id="notProblemSection">
-      <h2>⚠️ Not a Problem Page</h2>
-      <br />
-      <img
-        src="../../assets/not-found.png"
-        alt="Not a problem page"
-        width="120"
-        style="display: block; margin: 10px auto; border-radius: 8px"
-      />
-      <br />
-      <p class="info">Please open a LeetCode problem page and try again.</p>
-    </div>
+  <div id="notProblemSection">
+    <h2>⚠️ Not a Problem Page</h2>
+    <br />
+    <img src="../../assets/not-found.png" alt="Not a problem page" width="120"
+      style="display: block; margin: 10px auto; border-radius: 8px" />
+    <br />
+    <p class="info">Please open a LeetCode problem page and try again.</p>
+  </div>
 
-    <script type="module" src="../../dist/name.js"></script>
-  </body>
+  <script type="module" src="../../dist/popup.js"></script>
+</body>
+
 </html>

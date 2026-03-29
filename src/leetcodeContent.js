@@ -1,8 +1,8 @@
 function getQuestionSlugFromURL() {
-  const url = window.location.href; 
+  const url = window.location.href;
   const match = url.match(/leetcode\.com\/problems\/([^\/]+)/);
   if (match && match[1]) {
-    return match[1];  
+    return match[1];
   }
   return null;
 }
@@ -34,7 +34,7 @@ async function fetchLeetCodeProblem(titleSlug) {
 
 //gemini
 async function getGeminiCompletion(prompt) {
-  const apiKey = ""; 
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
   const payload = {
     contents: [{
@@ -78,7 +78,7 @@ For the following problem: Title: ${question.title} \nDescription: ${question.co
         const completion = await getGeminiCompletion(prompt);
         console.log(completion);
 
-        
+
         chrome.storage.sync.set({
           lastPrompt: prompt,
           lastResponse: completion,
@@ -88,14 +88,14 @@ For the following problem: Title: ${question.title} \nDescription: ${question.co
           console.log("Prompt and response saved to chrome.storage.sync");
         });
 
-        sendResponse({ hints: completion }); 
+        sendResponse({ hints: completion });
       } catch (error) {
         console.error("Error in SCRAPE_QUESTION:", error);
         sendResponse({ hints: "❌ Error generating hints." });
       }
     })();
 
-    return true; 
+    return true;
   }
 });
 
@@ -116,14 +116,14 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         ${event.data.code}
 
             For the following problem: Title: ${question.title} \nDescription: ${question.content}`;
-        
+
         const completion = await getGeminiCompletion(prompt);
-        
+
         window.removeEventListener("message", handleMessage);
         sendResponse({ code: completion || "" });
       }
     }
-    
+
     window.addEventListener("message", handleMessage);
 
     return true;  // keeping message channel open for async sendResponse
